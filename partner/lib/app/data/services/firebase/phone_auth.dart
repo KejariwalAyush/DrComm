@@ -76,7 +76,7 @@ class PhoneAuthService extends GetxService {
   signOut() async {
     try {
       await _firebaseAuth.signOut();
-      // Get.offAllNamed(Routes.LOGIN);
+      Get.offAllNamed(Routes.AUTH);
     } on Exception catch (e) {
       Get.log(e.toString());
     }

@@ -49,6 +49,8 @@ initServices() async {
 
   /// Initialize APIS
   await Get.putAsync(() => Api().init());
+  await Get.putAsync(() => ProfileApi().init());
+  await Get.putAsync(() => SignupApi().init());
   Get.log('All services started...');
 }
 

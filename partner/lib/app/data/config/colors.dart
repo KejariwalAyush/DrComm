@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 const Color kcAccent = const Color(0xff457b9d);
 
 /// ![#e7eefe](https://via.placeholder.com/15/e7eefe/000000?text=+) `#e7eefe`
-const Color kcBgAccent = const Color(0xffe7eefe);
+const Color kcBg = const Color(0xffe7eefe);
 
-/// ![#F2F0E4](https://via.placeholder.com/15/F2F0E4/000000?text=+) `#F2F0E4`
-const Color kcBg = const Color(0xffF2F0E4);
+/// ![#e4e7eb](https://via.placeholder.com/15/e4e7eb/000000?text=+) `#e4e7eb`
+const Color kcBgAccent = const Color(0xffe4e7eb);
 
 /// ![#8B8383](https://via.placeholder.com/15/8B8383/000000?text=+) `#8B8383`
 final Color kcGeryIcon = Color(0xff8B8383).withOpacity(0.9);

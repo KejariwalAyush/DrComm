@@ -7,16 +7,17 @@ environment:
 
 dependencies:
   cupertino_icons: ^1.0.2
-  flutter:
-    sdk: flutter
-
   firebase_analytics: ^8.3.1
   firebase_auth: ^3.1.0
   firebase_core: ^1.6.0
   firebase_messaging: ^10.0.6
+  flutter:
+    sdk: flutter
   fluttertoast: ^8.0.8
+  geocoding: ^2.0.1
+  geolocator: ^7.7.0
   get: 4.3.8
-  location: ^4.3.0
+  image_picker: ^0.8.4
   velocity_x: ^3.3.0
 
 dev_dependencies:

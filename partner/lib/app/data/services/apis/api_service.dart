@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import '../../data.dart';
 
 // final baseUrl = 'http://192.168.29.99:5000/api/v1';
-final baseUrl = 'http://10.147.20.91:5000/api/v1';
+final baseUrl = 'http://10.147.20.91:5000/api';
 
 class Api extends GetConnect {
   final auth = Get.find<PhoneAuthService>();
@@ -26,7 +26,7 @@ class Api extends GetConnect {
   /// Logging in and getting bearer token
   ///
   Future login() async {
-    final _extUrl = '/login/getToken';
+    final _extUrl = '/doctor/user/login';
     Map<String, String> body = {
       "uid": "${auth.fireUser!.uid}",
       "phno": "${auth.fireUser!.phoneNumber}"
