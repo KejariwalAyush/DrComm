@@ -24,9 +24,6 @@ const userprofileSchema = mongoose.Schema({
     location: {
         type: Object
     },
-    notificationToken: {
-        type: String
-    },
     dp: {
         type: String,
         default: 'https://i.stack.imgur.com/l60Hf.png'

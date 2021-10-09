@@ -37,10 +37,10 @@ router.post('/login', (req, res) => {
 
 router.post('/signup', isAuthenticated, (req, res) => {
     const body = req.body
-    if(!body.name || !body.phno || !body.dob || !body.gender || !body.notificationToken) {
+    if(!body.name || !body.phno || !body.dob || !body.gender) {
         res.status(400).json({
             success: false,
-            message: 'PARAMETER ERROR: required name, phno, dob, gender, notificationToken'
+            message: 'PARAMETER ERROR: required name, phno, dob, gender'
         })
     }
     else {
@@ -76,21 +76,13 @@ router.post('/uploadDp', isAuthenticated, upload.single('file'), (req, res) => {
 })
 
 router.post('/setLocation', isAuthenticated, (req, res) => {
-    if(!req.body.location) {
-        return res.status(400).json({
-            success: false,
-            message: 'PARAMETER ERROR: expected location as object'
+    userUserController.updateLocation(req.uid, req.body)
+    .then(() => {
+        res.json({
+            success: true,
+            message: 'location updated'
         })
-    }
-    else {
-        userUserController.updateLocation(req.uid, req.body.location)
-        .then(() => {
-            res.json({
-                success: true,
-                message: 'location updated'
-            })
-        })
-    }
+    })
 })
 
 module.exports = router

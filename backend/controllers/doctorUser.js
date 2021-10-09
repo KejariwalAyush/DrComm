@@ -9,7 +9,7 @@ exports.signup = (uid, data) => {
             name: data.name,
             phno: data.phno,
             gender: data.gender,
-            specialization: data.specialization,
+            specialization: data.specialization.toLowerCase(),
             notificationToken: data.notificationToken
         })
 
@@ -27,7 +27,12 @@ exports.getFullProfile = uid => {
     return new Promise((resolve, refuse) => {
         doctorProfile.findById(uid)
         .then(data => {
-            resolve(formatter.doctorLongProfile(data))
+            if(data==null) {
+                resolve(null)
+            }
+            else {
+                resolve(formatter.doctorLongProfile(data))
+            }
         })
         .catch(err => {
             refuse(err)

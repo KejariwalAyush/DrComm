@@ -65,7 +65,7 @@ router.get('/getMyProfile', isAuthenticated, (req, res) => {
     })
 })
 
-router.post('/uploadCertificate', isAuthenticated, upload.single('file'), (req, res) => {
+router.post('/uploadCertificate', isAuthenticated, upload.single('avatar'), (req, res) => {
     doctorUserController.uploadCertificate(req.uid, req.file)
     .then(() => {
         res.json({
@@ -75,7 +75,7 @@ router.post('/uploadCertificate', isAuthenticated, upload.single('file'), (req, 
     })
 })
 
-router.post('/uploadDp', isAuthenticated, upload.single('file'), (req, res) => {
+router.post('/uploadDp', isAuthenticated, upload.single('avatar'), (req, res) => {
     doctorUserController.uploadDp(req.uid, req.file)
     .then(() => {
         res.json({
@@ -86,21 +86,13 @@ router.post('/uploadDp', isAuthenticated, upload.single('file'), (req, res) => {
 })
 
 router.post('/setLocation', isAuthenticated, (req, res) => {
-    if(!req.body.location) {
-        return res.status(400).json({
-            success: false,
-            message: 'PARAMETER ERROR: expected location as object'
+    doctorUserController.updateLocation(req.uid, req.body)
+    .then(() => {
+        res.json({
+            success: true,
+            message: 'location updated'
         })
-    }
-    else {
-        doctorUserController.updateLocation(req.uid, req.body.location)
-        .then(() => {
-            res.json({
-                success: true,
-                message: 'location updated'
-            })
-        })
-    }
+    })
 })
 
 router.post('/setIsActive', isAuthenticated, (req, res) => {

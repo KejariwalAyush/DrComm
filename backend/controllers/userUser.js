@@ -9,8 +9,7 @@ exports.signup = (uid, data) => {
             name: data.name,
             phno: data.phno,
             dob: data.dob,
-            gender: data.gender,
-            notificationToken: data.notificationToken
+            gender: data.gender
         })
 
         newUser.save()
