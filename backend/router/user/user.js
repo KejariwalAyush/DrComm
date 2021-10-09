@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const {isAuthenticated} = require('../../middlewares/auth')
-const {verifyUser, generateToken} = require('../../controllers/login')
+const { upload, verifyUser, generateToken } = require('../../controllers/firestoreOps')
 const userUserController = require('../../controllers/userUser')
 
 router.post('/login', (req, res) => {
@@ -51,6 +51,44 @@ router.post('/signup', isAuthenticated, (req, res) => {
         .catch(err => {
             console.log(err)
             res.sendStatus(500)
+        })
+    }
+})
+
+router.get('/getMyProfile', isAuthenticated, (req, res) => {
+    userUserController.getFullProfile(req.uid)
+    .then(data => {
+        res.json(data)
+    })
+    .catch(err => {
+        res.sendStatus(500)
+    })
+})
+
+router.post('/uploadDp', isAuthenticated, upload.single('file'), (req, res) => {
+    userUserController.uploadDp(req.uid, req.file)
+    .then(() => {
+        res.json({
+            success: true,
+            message: 'display picture uploaded'
+        })
+    })
+})
+
+router.post('/setLocation', isAuthenticated, (req, res) => {
+    if(!req.body.location) {
+        return res.status(400).json({
+            success: false,
+            message: 'PARAMETER ERROR: expected location as object'
+        })
+    }
+    else {
+        userUserController.updateLocation(req.uid, req.body.location)
+        .then(() => {
+            res.json({
+                success: true,
+                message: 'location updated'
+            })
         })
     }
 })
