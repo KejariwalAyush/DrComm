@@ -115,6 +115,8 @@ class SignupController extends GetxController {
     } else {
       showSnackBar("Display pic & Certificate are required", isError: true);
     }
+
+    DrComm.user = await Get.find<ProfileApi>().getProfile();
     Get.offAllNamed(Routes.HOME);
     isLoading.toggle();
   }

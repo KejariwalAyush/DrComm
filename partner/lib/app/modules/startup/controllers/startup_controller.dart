@@ -26,7 +26,7 @@ class StartupController extends GetxController {
             Get.offNamed(Routes.SIGNUP);
           else {
             await Get.find<SignupApi>().setLocation(loc);
-            print(value.toJson());
+            DrComm.user = value;
             Get.offNamed(Routes.HOME);
           }
         });

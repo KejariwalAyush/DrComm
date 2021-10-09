@@ -14,7 +14,8 @@ class ProfileApi extends GetxService {
   Future<DrProfile?> getProfile() async {
     final _extUrl = "/doctor/user/getMyProfile";
     DrProfile? x;
-    await api.getReq(_extUrl, (resp) => x = DrProfile.fromMap(resp));
+    await api.getReq(
+        _extUrl, (resp) => x = resp == null ? null : DrProfile.fromMap(resp));
     return x;
   }
 }

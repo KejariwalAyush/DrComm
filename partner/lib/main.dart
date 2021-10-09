@@ -16,7 +16,7 @@ void main() async {
             GetMaterialApp(
               title: "DrComm Partner",
               initialRoute: AppPages.INITIAL,
-              getPages: AppPages.routes,
+              getPages: AppPages.routes, color: kcAccent,
               theme: AppThemes.lightTheme,
               builder: (context, widget) {
                 return ScrollConfiguration(

@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
+  RxInt tab = 0.obs;
+
   @override
   void onInit() {
     super.onInit();
@@ -13,4 +15,9 @@ class HomeController extends GetxController {
 
   @override
   void onClose() {}
+
+  changeTab(int position) {
+    tab.value = position;
+    update();
+  }
 }

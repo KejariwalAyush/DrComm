@@ -10,11 +10,11 @@ class DrProfile {
   final String certificate;
   final String dp;
   final Gender gender;
-  final Placemark location;
+  final Placemark? location;
   final String specialization;
   final bool isActive;
   final bool homeVisit;
-  final int rating;
+  final double rating;
 
   DrProfile({
     required this.id,
@@ -38,7 +38,7 @@ class DrProfile {
       'certificate': certificate,
       'dp': dp,
       'gender': getGenderString(gender),
-      'location': location.toJson(),
+      'location': location?.toJson() ?? null,
       'specialization': specialization,
       'isActive': isActive,
       'homeVisit': homeVisit,
@@ -54,11 +54,12 @@ class DrProfile {
       certificate: map['certificate'],
       dp: map['dp'],
       gender: getGender(map['gender']),
-      location: Placemark.fromMap(map['location']),
+      location:
+          map['location'] == null ? null : Placemark.fromMap(map['location']),
       specialization: map['specialization'],
       isActive: map['isActive'],
       homeVisit: map['homeVisit'],
-      rating: map['rating'],
+      rating: double.parse(map['rating'].toString()),
     );
   }
 
