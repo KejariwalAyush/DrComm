@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 
 const userprofileSchema = mongoose.Schema({
+    _id: {
+        type: String,
+        required: true
+    },
     name: {
         type: String,
         required: true
@@ -24,7 +28,8 @@ const userprofileSchema = mongoose.Schema({
         type: String
     },
     dp: {
-        type: String
+        type: String,
+        default: 'https://i.stack.imgur.com/l60Hf.png'
     }
 })
 
