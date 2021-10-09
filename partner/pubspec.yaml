@@ -12,17 +12,14 @@ dependencies:
   firebase_auth: ^3.1.0
   firebase_core: ^1.6.0
   firebase_messaging: ^10.0.6
-<<<<<<< HEAD
   flutter:
     sdk: flutter
-=======
-  
->>>>>>> c510e21e92191b5edfd27002d23191a23bcb1ba0
   fluttertoast: ^8.0.8
   geocoding: ^2.0.1
   geolocator: ^7.7.0
   get: 4.3.8
   image_picker: ^0.8.4
+  url_launcher: ^6.0.12
   velocity_x: ^3.3.0
 
 dev_dependencies:

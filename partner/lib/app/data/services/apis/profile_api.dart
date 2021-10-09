@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:get/get.dart';
 import 'package:partner/app/data/data.dart';
 
@@ -17,5 +19,14 @@ class ProfileApi extends GetxService {
     await api.getReq(
         _extUrl, (resp) => x = resp == null ? null : DrProfile.fromMap(resp));
     return x;
+  }
+
+  Future<List<DrAppointment>> getAppoinments() async {
+    final _extUrl = "/doctor/doctor/myAppointments";
+    final List<DrAppointment> appoinments = [];
+    await api.getReq(_extUrl, (resp) {
+      for (var res in resp) appoinments.add(DrAppointment.fromMap(res));
+    });
+    return appoinments;
   }
 }

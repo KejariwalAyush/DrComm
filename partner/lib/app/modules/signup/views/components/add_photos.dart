@@ -32,7 +32,7 @@ class AddPhotos extends StatelessWidget {
                 children: [
                   Center(
                     child: Text(
-                      "Now add\nyour Indentity",
+                      "Now add\nyour Identity",
                       style: Get.textTheme.headline3!.copyWith(color: kcAccent),
                       textAlign: TextAlign.center,
                     ),
