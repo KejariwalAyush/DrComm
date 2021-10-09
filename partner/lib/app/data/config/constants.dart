@@ -6,5 +6,3 @@ final minAge = 18.0;
 final maxAge = 45.0;
 
 final bottomNavBarHeight = 55.0;
-
-final url_tnc = "http://congle.in/";

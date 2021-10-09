@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
+import 'package:partner/app/routes/app_pages.dart';
 
 class PhoneAuthService extends GetxService {
   User? fireUser;
@@ -96,7 +97,7 @@ class PhoneAuthService extends GetxService {
       //   Get.offAllNamed(Routes.SIGNUP);
       // else {
       //   DrComm.currentUser = user;
-      //   Get.offAllNamed(Routes.HOME);
+      Get.offAllNamed(Routes.HOME);
       // }
     } else {
       Get.log("Error");

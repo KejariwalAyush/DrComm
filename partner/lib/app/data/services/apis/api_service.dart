@@ -7,7 +7,6 @@ import 'package:get/get.dart';
 
 import '../../data.dart';
 
-// final baseUrl = 'http://congle.in/api';
 // final baseUrl = 'http://192.168.29.99:5000/api/v1';
 final baseUrl = 'http://10.147.20.91:5000/api/v1';
 

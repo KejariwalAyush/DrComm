@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-/// ![#2871FF](https://via.placeholder.com/15/2871FF/000000?text=+) `#2871FF`
-const Color kcAccent = const Color(0xff2871FF);
+/// ![#457b9d](https://via.placeholder.com/15/457b9d/000000?text=+) `#457b9d`
+const Color kcAccent = const Color(0xff457b9d);
 
 /// ![#e7eefe](https://via.placeholder.com/15/e7eefe/000000?text=+) `#e7eefe`
 const Color kcBgAccent = const Color(0xffe7eefe);
