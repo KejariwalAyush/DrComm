@@ -1,3 +1,4 @@
+import 'package:drcomm/Screens/SignDetails.dart';
 import 'package:drcomm/Screens/test.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -34,12 +35,8 @@ class _MyAppState extends State<MyApp> {
     }
 
     return MaterialApp(
-      // theme: ThemeData.dark(),
-
-      // theme: kIsWeb?ThemeData.light():ThemeData.dark(),̨
-
       debugShowCheckedModeBanner: false,
-      home: check ? Testing() : LoginScreen(),
+      home: check ? EditProfile(appbarname: "Your Profile",) : LoginScreen(),
     );
 
     // home: LoginMobile(),

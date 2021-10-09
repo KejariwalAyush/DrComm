@@ -1,20 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d44b6224-df19-4b13-b4ef-00818e678e33" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/partner/ios/Flutter/Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/partner/ios/Flutter/Debug.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/partner/ios/Flutter/Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/partner/ios/Flutter/Release.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/partner/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/partner/pubspec.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drcomm/lib/Screens/SignDetails.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drcomm/lib/Screens/home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/DrComm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DrComm.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drcomm/lib/Helper/Utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/drcomm/lib/Helper/Utils.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drcomm/lib/Screens/Login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/drcomm/lib/Screens/Login.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drcomm/lib/Screens/test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/drcomm/lib/Screens/test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drcomm/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/drcomm/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drcomm/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/drcomm/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1zGo2ku82tmkE1bBMjT7Xz7OCCP" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -52,26 +86,58 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="184" y="121" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1633783733420">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
     <state x="184" y="121" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1440.875@0.25.1440.875" timestamp="1633783733420" />
-    <state width="1398" height="223" key="GridCell.Tab.0.bottom" timestamp="1633783957489">
+    <state width="1398" height="222" key="GridCell.Tab.0.bottom" timestamp="1633814466104">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
-    <state width="1398" height="223" key="GridCell.Tab.0.bottom/0.25.1440.875@0.25.1440.875" timestamp="1633783957489" />
-    <state width="1398" height="223" key="GridCell.Tab.0.center" timestamp="1633783957488">
+    <state width="672" height="240" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1633803119628" />
+    <state width="1398" height="222" key="GridCell.Tab.0.bottom/0.25.1440.875@0.25.1440.875" timestamp="1633814466104" />
+    <state width="1398" height="222" key="GridCell.Tab.0.center" timestamp="1633814466103">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
-    <state width="1398" height="223" key="GridCell.Tab.0.center/0.25.1440.875@0.25.1440.875" timestamp="1633783957488" />
-    <state width="1398" height="223" key="GridCell.Tab.0.left" timestamp="1633783957487">
+    <state width="672" height="240" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1633803119626" />
+    <state width="1398" height="222" key="GridCell.Tab.0.center/0.25.1440.875@0.25.1440.875" timestamp="1633814466103" />
+    <state width="1398" height="222" key="GridCell.Tab.0.left" timestamp="1633814466103">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
-    <state width="1398" height="223" key="GridCell.Tab.0.left/0.25.1440.875@0.25.1440.875" timestamp="1633783957487" />
-    <state width="1398" height="223" key="GridCell.Tab.0.right" timestamp="1633783957489">
+    <state width="672" height="240" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1633803119623" />
+    <state width="1398" height="222" key="GridCell.Tab.0.left/0.25.1440.875@0.25.1440.875" timestamp="1633814466103" />
+    <state width="1398" height="222" key="GridCell.Tab.0.right" timestamp="1633814466104">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
-    <state width="1398" height="223" key="GridCell.Tab.0.right/0.25.1440.875@0.25.1440.875" timestamp="1633783957489" />
+    <state width="672" height="240" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1633803119627" />
+    <state width="1398" height="222" key="GridCell.Tab.0.right/0.25.1440.875@0.25.1440.875" timestamp="1633814466104" />
+    <state x="385" y="216" width="670" height="676" key="search.everywhere.popup" timestamp="1633809880591">
+      <screen x="0" y="25" width="1440" height="875" />
+    </state>
+    <state x="385" y="196" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1633801887322" />
+    <state x="385" y="216" width="670" height="676" key="search.everywhere.popup/0.25.1440.875@0.25.1440.875" timestamp="1633809880591" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/drcomm/lib/Screens/test.dart</url>
+          <line>26</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
