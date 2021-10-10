@@ -33,6 +33,9 @@ dependencies:
   pin_code_fields: ^7.3.0
   google_fonts: ^2.1.0
   intl_phone_number_input: ^0.7.0+2
+  shimmer: ^2.0.0
+
+
 
 dev_dependencies:
   flutter_test:

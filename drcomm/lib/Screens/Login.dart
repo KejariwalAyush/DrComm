@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:drcomm/Screens/test.dart';
+import 'package:drcomm/Screens/SignDetails.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +22,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   String phoneAppBar = 'Continue with Phone';
   String otpAppBar = 'Verify Phone';
-  static Color downbar = Color(0xff202c3b);
+
   var onTapRecognizer;
   bool hasError = false;
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
@@ -30,9 +30,10 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController textEditingController = TextEditingController();
   late StreamController<ErrorAnimationType> errorController;
   String currentText = "";
-
-  // bool correct = true;
-  String _otp_code = "";
+  String _phoneNo = "";
+  PhoneNumber number = PhoneNumber(isoCode: 'IN');
+  static final TextEditingController controller = TextEditingController();
+  static final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   void initState() {
     onTapRecognizer = TapGestureRecognizer()
@@ -65,7 +66,13 @@ class _LoginScreenState extends State<LoginScreen> {
 
         if (authCredential.user != null) {
           Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => Testing()));
+            context,
+            MaterialPageRoute(
+              builder: (context) => EditProfile(
+                appbarname: "Your Profile",
+              ),
+            ),
+          );
         }
       });
     } on FirebaseAuthException catch (e) {
@@ -98,7 +105,7 @@ class _LoginScreenState extends State<LoginScreen> {
           currentState == MobileVerificationState.SHOW_MOBILE_FORM_STATE
               ? phoneAppBar
               : otpAppBar,
-          style: GoogleFonts.roboto(fontSize: 25, color: Colors.green),
+          style: GoogleFonts.rubik(fontSize: 22, color: Colors.black),
         ),
       ),
       // body:
@@ -109,25 +116,16 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget InputBox() {
     return SingleChildScrollView(
-      child: Container(
-        color: Colors.white,
-        // padding: EdgeInsets.all(20),
-        child: currentState == MobileVerificationState.SHOW_MOBILE_FORM_STATE
-            ? PhoneInput2(context)
-            : OTPinput(context),
-      ),
+      child: currentState == MobileVerificationState.SHOW_MOBILE_FORM_STATE
+          ? PhoneInput(context)
+          : OTPinput(context),
     );
   }
 
-  static final TextEditingController controller = TextEditingController();
-  static final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-
   // static String initialCountry = 'IN';
-  String _phoneNo = "";
-  PhoneNumber number = PhoneNumber(isoCode: 'IN');
 
   // it will take input from userand forward it for further verfication
-  Widget PhoneInput2(context) {
+  Widget PhoneInput(context) {
     return Form(
       key: formKey,
       child: Container(
@@ -157,7 +155,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20),
                       topRight: Radius.circular(20))),
-              height: MediaQuery.of(context).size.height / 2,
+              height: MediaQuery.of(context).size.height / 3,
               width: MediaQuery.of(context).size.width,
               padding: EdgeInsets.all(15),
               child: Column(children: [
@@ -248,7 +246,7 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  //
+  //Method to Send OTP
   MobileSent() async {
     formKey.currentState!.validate();
 
@@ -293,9 +291,11 @@ class _LoginScreenState extends State<LoginScreen> {
   void getPhoneNumber(String phoneNumber) async {
     PhoneNumber number =
         await PhoneNumber.getRegionInfoFromPhoneNumber(phoneNumber, 'IN');
-    setState(() {
-      this.number = number;
-    });
+    setState(
+      () {
+        this.number = number;
+      },
+    );
   }
 
   Widget OTPinput(context) {
@@ -423,21 +423,6 @@ class _LoginScreenState extends State<LoginScreen> {
           SizedBox(
             height: 20,
           ),
-          RichText(
-            textAlign: TextAlign.center,
-            text: TextSpan(
-                text: "Didn't receive the code? ",
-                style: TextStyle(color: Colors.black54, fontSize: 15),
-                children: [
-                  TextSpan(
-                      text: " RESEND",
-                      recognizer: onTapRecognizer,
-                      style: TextStyle(
-                          color: Color(0xFF91D3B3),
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16))
-                ]),
-          ),
           SizedBox(
             height: 14,
           ),
@@ -456,21 +441,18 @@ class _LoginScreenState extends State<LoginScreen> {
               } else {
                 setState(() {
                   hasError = false;
-                }
-                   
-                    );
+                });
 
-                _otp_code = currentText;
                 PhoneAuthCredential phoneAuthCredential =
                     PhoneAuthProvider.credential(
-                        verificationId: verificationID, smsCode: _otp_code);
+                        verificationId: verificationID, smsCode: currentText);
                 SignInWithPhoneAuthCredential(phoneAuthCredential);
                 // VerifyOTP();
               }
             },
             child: Container(
                 decoration: BoxDecoration(
-                  color: Color(0xffFEDB3E),
+                  color: Colors.green,
                   borderRadius: BorderRadius.circular(20),
                   boxShadow: [
                     BoxShadow(
