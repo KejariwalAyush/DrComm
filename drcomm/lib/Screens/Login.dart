@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:drcomm/Screens/SignDetails.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
@@ -8,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+
 
 enum MobileVerificationState {
   SHOW_MOBILE_FORM_STATE,

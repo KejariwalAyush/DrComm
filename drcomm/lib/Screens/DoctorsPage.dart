@@ -91,41 +91,76 @@ class _DoctorsPageState extends State<DoctorsPage> {
             SizedBox(
               height: 15,
             ),
-            Center(
-              child: DropdownButton(
-                  value: appointmentTime,
-                  onChanged: (String? newValue) {
-                    setState(() {
-                      appointmentTime = newValue!;
-                    });
-                  },
-                  items: Utils.dropdownTimeList),
-            ),
+            doctorDetails.homeVisit == true || doctorDetails.isActive    == true
+                ? Center(
+                    child: DropdownButton(
+                        value: appointmentTime,
+                        onChanged: (String? newValue) {
+                          setState(() {
+                            appointmentTime = newValue!;
+                          });
+                        },
+                        items: Utils.dropdownTimeList),
+                  )
+                : Container(),
             SizedBox(
               height: 60,
             ),
-            OutlineButton(
-              onPressed: () {
-
-              },
-              child: Center(
-                child: Container(
-                  padding: EdgeInsets.all(5),
-                  child: Shimmer.fromColors(
-                    baseColor: Colors.green,
-                    highlightColor: Colors.yellow,
-                    child: Text(
-                      'Book Your Appointment',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 24.0,
-                        fontWeight: FontWeight.bold,
+            doctorDetails.homeVisit == true || doctorDetails.isActive    == true
+                ? OutlineButton(
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (ctx) => AlertDialog(
+                          title: Text("Confirmation"),
+                          content: Text("Confirm Your Appointment with " +
+                              doctorDetails.name +
+                              " at " +
+                              appointmentTime),
+                          actions: <Widget>[
+                            FlatButton(
+                              onPressed: () {
+                                Navigator.of(ctx).pop();
+                                Navigator.of(ctx).pop();
+                              },
+                              child: Text(
+                                "Confirm",
+                                style: GoogleFonts.rubik(color: Colors.green),
+                              ),
+                            ),
+                            FlatButton(
+                              onPressed: () {
+                                Navigator.of(ctx).pop();
+                                Navigator.of(ctx).pop();
+                              },
+                              child: Text(
+                                "Decline",
+                                style: GoogleFonts.rubik(color: Colors.red),
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                    child: Center(
+                      child: Container(
+                        padding: EdgeInsets.all(5),
+                        child: Shimmer.fromColors(
+                          baseColor: Colors.green,
+                          highlightColor: Colors.yellow,
+                          child: Text(
+                            'Book Your Appointment',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 24.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ),
-              ),
-            ),
+                  )
+                : Container(),
           ],
         ),
       ),
