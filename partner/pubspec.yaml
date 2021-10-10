@@ -8,7 +8,6 @@ environment:
 dependencies:
   cupertino_icons: ^1.0.2
   fancy_bottom_navigation: ^0.3.3
-  firebase_analytics: ^8.3.1
   firebase_auth: ^3.1.0
   firebase_core: ^1.6.0
   firebase_messaging: ^10.0.6
@@ -19,7 +18,7 @@ dependencies:
   geolocator: ^7.7.0
   get: 4.3.8
   image_picker: ^0.8.4
-  url_launcher: ^6.0.12
+  url_launcher: ^6.0.10
   velocity_x: ^3.3.0
 
 dev_dependencies:

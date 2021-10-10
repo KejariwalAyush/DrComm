@@ -34,8 +34,12 @@ class HomeView extends GetView<HomeController> {
                     if (!snapshot.hasData)
                       return Center(child: CircularProgressIndicator());
                     final List<DrAppointment> apps = snapshot.data!;
+
                     apps.removeWhere((e) =>
                         e.appointment.appointmentDate.isBefore(DateTime.now()));
+
+                    if (apps.length == 0)
+                      return 'No Appoinments'.text.makeCentered();
                     return ListView.builder(
                       itemCount: apps.length,
                       itemBuilder: (context, index) {
@@ -53,6 +57,8 @@ class HomeView extends GetView<HomeController> {
                     final List<DrAppointment> apps = snapshot.data!;
                     apps.removeWhere((e) =>
                         e.appointment.appointmentDate.isAfter(DateTime.now()));
+                    if (apps.length == 0)
+                      return 'No Appoinments'.text.makeCentered();
                     return ListView.builder(
                       itemCount: apps.length,
                       itemBuilder: (context, index) {

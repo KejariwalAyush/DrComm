@@ -1,4 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -10,13 +11,16 @@ import 'app/routes/app_pages.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   await initServices();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((value) => runApp(
             GetMaterialApp(
               title: "DrComm Partner",
               initialRoute: AppPages.INITIAL,
-              getPages: AppPages.routes, color: kcAccent,
+              getPages: AppPages.routes,
+              color: kcAccent,
               theme: AppThemes.lightTheme,
               builder: (context, widget) {
                 return ScrollConfiguration(
@@ -24,27 +28,14 @@ void main() async {
                     child: widget ?? Center());
               },
               onInit: initApp,
-              // onDispose: disposeApp,
             ),
           ));
 }
 
-// late final StreamSubscription<ConnectivityResult> _subscription;
-// void disposeApp() => _subscription.cancel();
-
 initServices() async {
   Get.log('starting services ...');
-  await Firebase.initializeApp();
 
-  /// Here is where you put get_storage, hive, shared_pref initialization.
-  /// or moor connection, or whatever that's async.
-  ///
-  // await Get.putAsync(() => ReceiveIntentService().init());
-  // await Get.putAsync(() => RemoteConfigService().init());
-  // await Get.putAsync(() => AdService().init());
-  // await Get.putAsync(() => AnalyticsService().init());
-
-  await Get.putAsync(() => FCMService().init());
+  if (!kIsWeb) await Get.putAsync(() => FCMService().init());
   await Get.putAsync(() => PhoneAuthService().init());
 
   /// Initialize APIS
@@ -56,24 +47,6 @@ initServices() async {
 
 void initApp() async {
   Get.log('Init App');
-  // Connectivity().checkConnectivity().then((value) {
-  //   if (value == ConnectivityResult.none) Get.to(() => NoConnectivity());
-  // });
-
-  // _subscription =
-  //     Connectivity().onConnectivityChanged.listen((ConnectivityResult result) {
-  //   Get.log(result.toString());
-  //   if (result == ConnectivityResult.none) {
-  //     try {
-  //       if (Get.find<HomeController>().pageIndex == 0)
-  //         Get.find<HomeController>().updatePageIndex(2);
-  //     } on Exception catch (e) {
-  //       Get.log(e.toString());
-  //     }
-  //     Get.to(() => NoConnectivity());
-  //   } else
-  //     Get.back();
-  // });
 }
 
 class ScrollBehaviorModified extends ScrollBehavior {

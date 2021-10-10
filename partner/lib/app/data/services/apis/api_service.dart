@@ -8,7 +8,6 @@ import 'package:get/get.dart';
 import '../../data.dart';
 
 final baseUrl = 'https://drcomm.herokuapp.com/api';
-// final baseUrl = 'http://10.147.20.91:5000/api';
 
 class Api extends GetConnect {
   final auth = Get.find<PhoneAuthService>();
