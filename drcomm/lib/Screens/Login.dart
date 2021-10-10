@@ -68,7 +68,9 @@ class _LoginScreenState extends State<LoginScreen> {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => EditProfile(),
+              builder: (context) => EditProfile(
+                appbarname: "Your Profile",
+              ),
             ),
           );
         }
@@ -289,9 +291,11 @@ class _LoginScreenState extends State<LoginScreen> {
   void getPhoneNumber(String phoneNumber) async {
     PhoneNumber number =
         await PhoneNumber.getRegionInfoFromPhoneNumber(phoneNumber, 'IN');
-    setState(() {
-      this.number = number;
-    },);
+    setState(
+      () {
+        this.number = number;
+      },
+    );
   }
 
   Widget OTPinput(context) {

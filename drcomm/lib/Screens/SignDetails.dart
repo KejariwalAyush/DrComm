@@ -7,22 +7,24 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class EditProfile extends StatefulWidget {
-  final appbarname ;
+  final appbarname;
 
   const EditProfile({Key? key, @required this.appbarname}) : super(key: key);
+
   @override
   _EditProfileState createState() => _EditProfileState(appbarname);
 }
 
 class _EditProfileState extends State<EditProfile> {
   final _auth = FirebaseAuth.instance;
-  final appbarName ;
+  final appbarName;
+
   String _userName = "";
   String _bloodGroup = "";
   String _gender = "Male";
   final dateController = TextEditingController();
 
-  _EditProfileState(this.appbarName);
+  _EditProfileState(@required this.appbarName);
 
   @override
   Widget build(BuildContext context) {
