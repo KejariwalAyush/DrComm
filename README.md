@@ -25,7 +25,7 @@ Improve medical and emergency communication
 
 3. Team Name: X-Legion-Coders
 
-4. Team Members: Ayush Kejariwal (@KejariwalAyush), Rohan Verma (@MartyMiniac), Avinaba Ray (@avinabaray), Siddhant Jaiswal (@SiddhantJaiswal-0125)
+4. Team Members: [**Ayush Kejariwal**](https://github.com/KejariwalAyush), [**Rohan Verma**](https://github.com/MartyMiniac), [**Avinaba Ray**](https://github.com/avinabaray), [**Siddhant Jaiswal**](https://github.com/SiddhantJaiswal-0125)
 
 5. Demo Link: https://drive.google.com/file/d/1usTHHo4_Kh95TyHYEVryaB_fiyx6jKXV/view?usp=drivesdk
 
@@ -44,7 +44,7 @@ The doctors will have the option to choose their preferred time slot and can do 
 - This idea is completely feasible as of now because the technology stack used is cross platform allowing reach for a larger number of audience
 
 - The backend can be scaled up infinitely to match the scale of audience required to carter using the industry standard technologies like Kubernetes. The same is true for the no-sql database mongodb that can be scaled horizontally using concepts of sharding.
-- Some of our Future Aspects
+- Some of our **Future Aspects**
 
    - Add patient profiling for easy assessment of patient by the doctors.
    - Add an SOS feature to notification panel for quick emergency response from nearby doctors.
